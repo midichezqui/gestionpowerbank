@@ -12,10 +12,20 @@
 define('APP_ENV', 'dev');
 
 // INFORMATIONS DE CONNEXION À LA BASE DE DONNÉES
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'db_location');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// On utilise APP_ENV pour distinguer la config locale (dev) et en ligne (prod)
+if (APP_ENV === 'dev') {
+    // Configuration locale
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'db_location');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+} else {
+    // Configuration en ligne
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'powerstate_bank');
+    define('DB_USER', 'powerstate_chrono');
+    define('DB_PASS', 'Php123java');
+}
 
 // FUSEAU HORAIRE GLOBAL
 date_default_timezone_set('Africa/Kinshasa');
